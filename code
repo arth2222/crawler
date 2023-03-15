@@ -15,3 +15,52 @@ for (int a = 0; a < 256; a++)
         }
     }
 }
+
+
+//Riktig tenkt, Vi trenger her 4 loops! Bra.
+//For å lage en metode, som kan kalles ved behov, kan vi ta koden din og gjøre dette: (kan også være static)
+private void GenerateIPAddressses()
+        {
+            for (int a = 0; a < 256; a++)
+            {
+                for (int b = 0; b < 256; b++)
+                {
+                    for (int c = 0; c < 256; c++)
+                    {
+                        for (int d = 0; d < 256; d++)
+                        {
+
+                            Console.WriteLine(a + "." + b + "." + c + "." + d);
+
+                        }
+                    }
+                }
+            }
+        }
+        
+//Om metoden skal returnere en Liste med IP-adresser, vil det se slik ut
+private static List<string> GenerateIPAddresssesList()
+{
+    List<string> list = new List<string>();
+    for (int a = 0; a < 256; a++)
+    {
+        for (int b = 0; b < 256; b++)
+        {
+            for (int c = 0; c < 256; c++)
+            {
+                for (int d = 0; d < 256; d++)
+                {
+                    list.Add(a + "." + b + "." + c + "." + d);
+                }
+            }
+        }
+    }
+    return list;
+}
+
+//for å kalle på denne metoden og få tak i lista med IP-adresser kan vi gjøre følgende:
+//var ipAddresses=GenerateIPAddresssesList();
+//eller
+//List <string> ipAddresses=GenerateIPAddresssesList();
+        
+        
